@@ -37,7 +37,8 @@
             <h2>Abstract</h1>
             <hr>
             <p>
-                Abstract.
+                A method to retrieve the parameters used to create a multitrack mix using only raw tracks and the stereo mixdown is presented. This method is able to model linear time-invariant effects such as gain, pan, equalisation, delay, and reverb. Nonlinear effects, such as distortion and compression, are not considered in this work. The optimization procedure used is the stochastic gradient descent with the aid of differentiable digital signal processing modules. This method allows for a fully interpretable representation of the mixing signal chain by explicitly modelling the audio effects rather than using differentiable blackbox modules. Two reverb module architectures are proposed, a “stereo reverb” model and an “individual reverb” model, and each is discussed. Objective feature measures are taken of the outputs of the two architectures when tasked with estimating a target mix and compared against a stereo gain mix baseline. A listening study is performed to measure how closely the two architectures can perceptually match a reference mix when compared to a stereo gain mix. Results show that the stereo reverb model performs best on objective measures and there is no statistically significant difference between the participants' perception of the stereo reverb model and reference mixes.
+
             </p>
         </div>
           
@@ -195,7 +196,26 @@
             <div style="background-color: #e9ecef;">
                 <pre>
                 <code>
-    @article{citation}</code>
+    @article{doi:10.1121/10.0005622,
+author = {Colonel,Joseph T.  and Reiss,Joshua },
+title = {Reverse engineering of a recording mix with differentiable digital signal processing},
+journal = {The Journal of the Acoustical Society of America},
+volume = {150},
+number = {1},
+pages = {608-619},
+year = {2021},
+doi = {10.1121/10.0005622},
+
+URL = { 
+        https://doi.org/10.1121/10.0005622
+    
+},
+eprint = { 
+        https://doi.org/10.1121/10.0005622
+    
+}
+
+}</code>
                 </pre>
             </div>
         </div>
