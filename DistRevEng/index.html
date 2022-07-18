@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Webpage hosting audio examples.">
     <meta name="author" content="Joseph T Colonel">
-    <title>Reverse engineering of a recording mix with differentiable digital signal processing </title>
+    <title>Reverse Engineering Memoryless Distortion Effects with Differentiable Waveshapers</title>
     
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -19,10 +19,11 @@
     <div class="jumbotron jumbotron-fluid text-center">
         <div class="row">
           <div class="col-lg-12">
-            <h1 class="mt-5">Reverse engineering of a recording mix with differentiable digital signal processing </h1>
+            <h1 class="mt-5">Reverse Engineering Memoryless Distortion Effects with Differentiable Waveshapers
             <hr>
             <p class="lead">
-                <a href="https://www.josephtcolonel.com/">Joseph T Colonel</a>, 
+                <a href="https://www.josephtcolonel.com/">Joseph T Colonel</a>,
+                <a href="https://google.com">Marco Comunita</a>,
                 <a href="http://www.eecs.qmul.ac.uk/~josh/">Joshua Reiss</a> 
             </p>
             <div class="btn-group" role="group" aria-label="Basic example">
@@ -37,7 +38,7 @@
             <h2>Abstract</h1>
             <hr>
             <p>
-                A method to retrieve the parameters used to create a multitrack mix using only raw tracks and the stereo mixdown is presented. This method is able to model linear time-invariant effects such as gain, pan, equalisation, delay, and reverb. Nonlinear effects, such as distortion and compression, are not considered in this work. The optimization procedure used is the stochastic gradient descent with the aid of differentiable digital signal processing modules. This method allows for a fully interpretable representation of the mixing signal chain by explicitly modelling the audio effects rather than using differentiable blackbox modules. Two reverb module architectures are proposed, a “stereo reverb” model and an “individual reverb” model, and each is discussed. Objective feature measures are taken of the outputs of the two architectures when tasked with estimating a target mix and compared against a stereo gain mix baseline. A listening study is performed to measure how closely the two architectures can perceptually match a reference mix when compared to a stereo gain mix. Results show that the stereo reverb model performs best on objective measures and there is no statistically significant difference between the participants' perception of the stereo reverb model and reference mixes.
+                We present a lightweight method of reverse engineering distortion effects using Wiener-Hammerstein models implemented in a differentiable framework. The Wiener-Hammerstein models are formulated using graphic equalizer pre-emphasis and de-emphasis filters and a parameterized waveshaping function. Several parameterized waveshaping functions are proposed and evaluated. The performance of each method is measured both objectively and subjectively on a dataset of guitar distortion emulation software plugins and guitar audio samples.  time-invariant effects such as gain, pan, equalisation, delay, and reverb. Nonlinear effects, such as distortion and compression, are not considered in this work. The optimization procedure used is the stochastic gradient descent with the aid of differentiable digital signal processing modules. This method allows for a fully interpretable representation of the mixing signal chain by explicitly modelling the audio effects rather than using differentiable blackbox modules. Two reverb module architectures are proposed, a “stereo reverb” model and an “individual reverb” model, and each is discussed. Objective feature measures are taken of the outputs of the two architectures when tasked with estimating a target mix and compared against a stereo gain mix baseline. A listening study is performed to measure how closely the two architectures can perceptually match a reference mix when compared to a stereo gain mix. Results show that the stereo reverb model performs best on objective measures and there is no statistically significant difference between the participants' perception of the stereo reverb model and reference mixes.
 
             </p>
         </div>
