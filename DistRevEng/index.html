@@ -19,176 +19,71 @@
     <div class="jumbotron jumbotron-fluid text-center">
         <div class="row">
           <div class="col-lg-12">
-            <h1 class="mt-5">Reverse Engineering Memoryless Distortion Effects with Differentiable Waveshapers
-            <hr>
+            <h1 class="mt-5">Reverse Engineering Memoryless Distortion Effects<br>with Differentiable Waveshapers
+            <!-- <hr> -->
             <p class="lead">
                 <a href="https://www.josephtcolonel.com/">Joseph T Colonel</a>,
-                <a href="https://google.com">Marco Comunita</a>,
+                <a href="https://mcomunita.github.io">Marco Comunità</a>,
                 <a href="http://www.eecs.qmul.ac.uk/~josh/">Joshua Reiss</a> 
             </p>
-            <div class="btn-group" role="group" aria-label="Basic example">
+            <!-- <div class="btn-group" role="group" aria-label="Basic example">
                 <a href="https://asa.scitation.org/doi/full/10.1121/10.0005622" type="button" class="btn btn-secondary">Paper</a>
-              </div>
+              </div> -->
           </div>
         </div>
       </div>
     
-    <div class="container">
+    <div class="container" style="width: 100%">
         <div class="section abstract">
-            <h2>Abstract</h1>
+            <h2>Abstract</h2>
             <hr>
             <p>
-                We present a lightweight method of reverse engineering distortion effects using Wiener-Hammerstein models implemented in a differentiable framework. The Wiener-Hammerstein models are formulated using graphic equalizer pre-emphasis and de-emphasis filters and a parameterized waveshaping function. Several parameterized waveshaping functions are proposed and evaluated. The performance of each method is measured both objectively and subjectively on a dataset of guitar distortion emulation software plugins and guitar audio samples.  time-invariant effects such as gain, pan, equalisation, delay, and reverb. Nonlinear effects, such as distortion and compression, are not considered in this work. The optimization procedure used is the stochastic gradient descent with the aid of differentiable digital signal processing modules. This method allows for a fully interpretable representation of the mixing signal chain by explicitly modelling the audio effects rather than using differentiable blackbox modules. Two reverb module architectures are proposed, a “stereo reverb” model and an “individual reverb” model, and each is discussed. Objective feature measures are taken of the outputs of the two architectures when tasked with estimating a target mix and compared against a stereo gain mix baseline. A listening study is performed to measure how closely the two architectures can perceptually match a reference mix when compared to a stereo gain mix. Results show that the stereo reverb model performs best on objective measures and there is no statistically significant difference between the participants' perception of the stereo reverb model and reference mixes.
-
+                We present a lightweight method of reverse engineering distortion effects 
+                using Wiener-Hammerstein models implemented in a differentiable framework. 
+                The Wiener-Hammerstein models are formulated using graphic equalizer 
+                pre-emphasis and de-emphasis filters and a parameterized waveshaping 
+                function. Several parameterized waveshaping functions are proposed and 
+                evaluated. The performance of each method is measured both objectively and 
+                subjectively on a dataset of guitar distortion emulation software plugins 
+                and guitar audio samples.  time-invariant effects such as gain, pan, 
+                equalisation, delay, and reverb. Nonlinear effects, such as distortion 
+                and compression, are not considered in this work. The optimization 
+                procedure used is the stochastic gradient descent with the aid of 
+                differentiable digital signal processing modules. This method allows for a 
+                fully interpretable representation of the mixing signal chain by explicitly 
+                modelling the audio effects rather than using differentiable blackbox modules. Two reverb module architectures are proposed, a “stereo reverb” model and an “individual reverb” model, and each is discussed. Objective feature measures are taken of the outputs of the two architectures when tasked with estimating a target mix and compared against a stereo gain mix baseline. A listening study is performed to measure how closely the two architectures can perceptually match a reference mix when compared to a stereo gain mix. Results show that the stereo reverb model performs best on objective measures and there is no statistically significant difference between the participants' perception of the stereo reverb model and reference mixes.
             </p>
         </div>
-          
+
+        <br>
+
+        <div class="section">
+            <h2 class="">Differentiable Waveshapers Samples</h2>
+            <hr>
+            <p>
+                Lorem ipsum
+            </p>
             <table class="table table-sm text-center" style="vertical-align: middle;">
                 <tr>
-                    <th class="passage">Mixdown</th>
-                    <th>Reference</th>
-                    <th>Stereo Bus Mix</th>
-                    <th>Gain Mix</th>
-                    <th>Individual Bus Mix</th>
+                    <th style="width: 25%">Waveshaper</th>
+                    <th style="width: 25%">Mesa/Boogie<br>Grid Slammer<br>(Emulation)</th>
+                    <th style="width: 25%">Vox<br>Tone Bender<br>(Emulation)</th>
+                    <th style="width: 25%">ProCo<br>Rat</th>
                 </tr>
                 <tr>
-                    <td class="passage">Desert</td>
+                    <td>Dry</td>
                     <td>
-                        <audio controls class="player">
-                        <source src="audio/Desert Reference.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
+                        <audio controls class="player"><source src="DistRevEng/audio/G71-48108-MGS-D10T8-20757/G71-48108-MGS-D10T8-20757_dry.wav" type="audio/mpeg"></audio>
                     </td>
                     <td>
-                        <audio controls class="player">
-                        <source src="audio/Desert 2Bus.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
+                        <audio controls class="player"><source src="DistRevEng/audio/P64-55110-VTB-F10-41197/P64-55110-VTB-F10-41197_dry.wav" type="audio/mpeg"></audio>
                     </td>
                     <td>
-                        <audio controls class="player">
-                        <source src="audio/Desert Gain.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Desert IndBus.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="passage">Etc</td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Etc Reference.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Etc 2Bus.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Etc Gain.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Etc IndBus.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="passage">Glad</td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Blue Reference.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Blue 2Bus.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Blue Gain.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Blue IndBus.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="passage">Pony</td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Pony Reference.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Pony 2Bus.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Pony Gain.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Pony IndBus.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="passage">Saga</td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Saga Reference.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Saga 2Bus.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Saga Gain.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                        <source src="audio/Saga IndBus.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>
+                        <audio controls class="player"><source src="DistRevEng/audio/P95-45250-RAT-D10F8-41562/P95-45250-RAT-D10F8-41562_dry.wav" type="audio/mpeg"></audio>
                     </td>
                 </tr>
             </table>
             <p class="text-center">All listening samples are 44.1kHz wav files.</p>
-
         </div>
 
         <div class="section">
@@ -212,7 +107,7 @@
                 </pre>
             </div>
         </div>
-
+    </div>
         <hr>
         <footer>
             <p>*Submitted to JASA</p>
