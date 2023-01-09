@@ -1,1 +1,196 @@
-foo.txt
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Webpage hosting audio examples.">
+    <meta name="author" content="Joseph T Colonel">
+    <title>Reverse Engineering Memoryless Distortion Effects with Differentiable Waveshapers</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="theme-color" content="#563d7c">
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body>
+    <!-- Page Content -->
+    <div class="jumbotron jumbotron-fluid text-center">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="mt-5">Reverse Engineering Memoryless Distortion Effects<br>with Differentiable Waveshapers
+            <!-- <hr> -->
+            <p></p>
+            <p class="lead">
+                <a href="https://www.josephtcolonel.com/">Joseph T Colonel</a>,
+                <a href="https://mcomunita.github.io">Marco Comunità</a>,
+                <a href="http://www.eecs.qmul.ac.uk/~josh/">Joshua Reiss</a> 
+            </p>
+            <!-- <div class="btn-group" role="group" aria-label="Basic example">
+                <a href="https://asa.scitation.org/doi/full/10.1121/10.0005622" type="button" class="btn btn-secondary">Paper</a>
+              </div> -->
+          </div>
+        </div>
+      </div>
+    
+    <div class="container" style="width: 100%">
+        <div class="section abstract">
+            <h2>Abstract</h2>
+            <hr>
+            <p>
+                We present a lightweight method of reverse engineering distortion effects 
+                using Wiener-Hammerstein models implemented in a differentiable framework. 
+                The Wiener-Hammerstein models are formulated using graphic equalizer 
+                pre-emphasis and de-emphasis filters and a parameterized waveshaping 
+                function. Several parameterized waveshaping functions are proposed and 
+                evaluated. The performance of each method is measured both objectively and 
+                subjectively on a dataset of guitar distortion emulation software plugins 
+                and guitar audio samples.  time-invariant effects such as gain, pan, 
+                equalisation, delay, and reverb. Nonlinear effects, such as distortion 
+                and compression, are not considered in this work. The optimization 
+                procedure used is the stochastic gradient descent with the aid of 
+                differentiable digital signal processing modules. This method allows for a 
+                fully interpretable representation of the mixing signal chain by explicitly 
+                modelling the audio effects rather than using differentiable blackbox modules. Two reverb module architectures are proposed, a “stereo reverb” model and an “individual reverb” model, and each is discussed. Objective feature measures are taken of the outputs of the two architectures when tasked with estimating a target mix and compared against a stereo gain mix baseline. A listening study is performed to measure how closely the two architectures can perceptually match a reference mix when compared to a stereo gain mix. Results show that the stereo reverb model performs best on objective measures and there is no statistically significant difference between the participants' perception of the stereo reverb model and reference mixes.
+            </p>
+        </div>
+
+        <br>
+
+        <div class="section">
+            <h2 class="">Differentiable Waveshapers Samples</h2>
+            <!-- <hr> -->
+            <p></p>
+            <table class="table table-sm text-center" style="vertical-align: middle;">
+                <tr>
+                    <th style="width: 15%">Waveshaper</th>
+                    <th style="width: 25%">Mesa/Boogie<br>Grid Slammer</th>
+                    <th style="width: 25%">Vox<br>Tone Bender</th>
+                    <th style="width: 25%">ProCo<br>Rat</th>
+                </tr>
+                <tr>
+                    <td>Dry</td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/G71-48108-MGS-D10T8-20757/G71-48108-MGS-D10T8-20757_dry.wav" type="audio/mpeg"></audio>
+                    </td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/P64-55110-VTB-F10-41197/P64-55110-VTB-F10-41197_dry.wav" type="audio/mpeg"></audio>
+                    </td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/P95-45250-RAT-D10F8-41562/P95-45250-RAT-D10F8-41562_dry.wav" type="audio/mpeg"></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reference</td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/G71-48108-MGS-D10T8-20757/G71-48108-MGS-D10T8-20757_reference.wav" type="audio/mpeg"></audio>
+                    </td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/P64-55110-VTB-F10-41197/P64-55110-VTB-F10-41197_target.wav" type="audio/mpeg"></audio>
+                    </td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/P95-45250-RAT-D10F8-41562/P95-45250-RAT-D10F8-41562_target.wav" type="audio/mpeg"></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tanh</td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/G71-48108-MGS-D10T8-20757/G71-48108-MGS-D10T8-20757_tanh.wav" type="audio/mpeg"></audio>
+                    </td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/P64-55110-VTB-F10-41197/P64-55110-VTB-F10-41197_tanh.wav" type="audio/mpeg"></audio>
+                    </td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/P95-45250-RAT-D10F8-41562/P95-45250-RAT-D10F8-41562_tanh.wav" type="audio/mpeg"></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fourier<br>Series</td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/G71-48108-MGS-D10T8-20757/G71-48108-MGS-D10T8-20757_fourier.wav" type="audio/mpeg"></audio>
+                    </td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/P64-55110-VTB-F10-41197/P64-55110-VTB-F10-41197_fourier.wav" type="audio/mpeg"></audio>
+                    </td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/P95-45250-RAT-D10F8-41562/P95-45250-RAT-D10F8-41562_fourier.wav" type="audio/mpeg"></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Legendre<br>Polynomials</td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/G71-48108-MGS-D10T8-20757/G71-48108-MGS-D10T8-20757_legendre.wav" type="audio/mpeg"></audio>
+                    </td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/P64-55110-VTB-F10-41197/P64-55110-VTB-F10-41197_legendre.wav" type="audio/mpeg"></audio>
+                    </td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/P95-45250-RAT-D10F8-41562/P95-45250-RAT-D10F8-41562_legendre.wav" type="audio/mpeg"></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sumtanh<br>Family</td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/G71-48108-MGS-D10T8-20757/G71-48108-MGS-D10T8-20757_sumtanh.wav" type="audio/mpeg"></audio>
+                    </td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/P64-55110-VTB-F10-41197/P64-55110-VTB-F10-41197_sumtanh.wav" type="audio/mpeg"></audio>
+                    </td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/P95-45250-RAT-D10F8-41562/P95-45250-RAT-D10F8-41562_sumtanh.wav" type="audio/mpeg"></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Powtanh<br>Family</td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/G71-48108-MGS-D10T8-20757/G71-48108-MGS-D10T8-20757_powtanh.wav" type="audio/mpeg"></audio>
+                    </td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/P64-55110-VTB-F10-41197/P64-55110-VTB-F10-41197_powtanh.wav" type="audio/mpeg"></audio>
+                    </td>
+                    <td>
+                        <audio controls class="player" style="width: 250px"><source src="audio/P95-45250-RAT-D10F8-41562/P95-45250-RAT-D10F8-41562_powtanh.wav" type="audio/mpeg"></audio>
+                    </td>
+                </tr>
+            </table>
+            <p class="text-center">All listening samples are 44.1kHz wav files.</p>
+        </div>
+
+        <div class="section">
+            <h2>Citation</h2>
+            <hr>
+            <div style="background-color: #e9ecef;">
+                <pre>
+                <code>
+    @inproceedings{colonel2022reverse,
+    title={Reverse engineering memoryless distortion effects with differentiable waveshaper},
+    author={Colonel, Joseph T. and Comunit\`a, Marco and Reiss, Joshua},
+    booktitle={Audio Engineering Society Convention 153},
+    year={2022},
+    organization={Audio Engineering Society}
+    }</code>
+                </pre>
+            </div>
+        </div>
+    </div>
+        <hr>
+        <footer>
+            <p>*Submitted to JASA</p>
+            <p>Send feedback and questions to <a href="http://josephtcolonel.com">Joseph T Colonel</a>.</p>
+        </footer>
+
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+  </body>
+</html>
